@@ -36,5 +36,5 @@ def get_number_to_words_result(number: int) -> str:
     except Exception:
         return ''
 
-    # метод NumberToWords возвращает число текстом с лишним пробелом, удалим его
+    # Метод NumberToWords возвращает число текстом с лишним пробелом, удалим его
     return result.strip()
