@@ -28,9 +28,10 @@ def number_to_words(request: Request):
 
 
 def get_number_to_words_result(number: int) -> str:
-    # вдруг что-то не так с WSDL-схемой, повесим попытку
+    # Вдруг что-то не так с WSDL-схемой, повесим попытку
     try: 
         client = Client('https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL')
+        # В WSDL-схеме описан метод NumberToWords, можем к нему обратиться
         result = client.service.NumberToWords(ubiNum=number)
     except Exception:
         return ''
